@@ -17,6 +17,16 @@ mkdir build && cd build
 cmake -DCMAKE_BUILD_TYPE=Release .. && make -j 8
 ```
 
+## wasm-build
+
+Install and activate [Emscripten SDK](https://emscripten.org/docs/getting_started/downloads.html), then run:
+
+```bash
+./scripts/build-wasm.sh
+```
+
+The build output is generated in `build-wasm/bin/` and then synced to `repo/` by default.
+
 ## blas-build
 
 Building the program with BLAS support may lead to some performance improvements in prompt processing using batch sizes higher than 32 (the default is 512). Support with CPU-only BLAS implementations doesn't affect the normal generation performance. We may see generation performance improvements with GPU-involved BLAS implementations, e.g. cuBLAS, hipBLAS. There are currently several different BLAS implementations available for build and use:
@@ -174,4 +184,3 @@ cmake --build build --config release
 You can test with:
 
 `./build/bin/sense-voice-main -m "/app/models/YOUR_MODEL_FILE" -t 8 -l auto "YOUR WAV FILE"`
-
