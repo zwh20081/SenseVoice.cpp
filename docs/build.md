@@ -25,7 +25,7 @@ Install and activate [Emscripten SDK](https://emscripten.org/docs/getting_starte
 ./scripts/build-wasm.sh
 ```
 
-The output will be generated in `build-wasm/bin/`.
+The build output is generated in `build-wasm/bin/` and then synced to `repo/` by default.
 
 ## blas-build
 
